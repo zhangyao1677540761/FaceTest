@@ -1,0 +1,21 @@
+区别
+1位置:
+局部变量:方法体中,形参中,代码块中
+
+成员变量:类中，方法外
+        1类变量,static修饰的
+        2实例变量,非static修饰的
+
+2修饰符:
+局部变量 final
+
+成员变量 public protected private final static volatile transient
+
+3存储位置
+局部变量 栈
+实例变量 堆
+类变量 方法区 (static修饰的)
+
+4作用域
+局部变量
+

@@ -1,0 +1,29 @@
+事务传播行为:
+    一个方法运行在了一个开启了事务的方法中,当前方法是使用原来的事务还是开启一个新的事务
+    即:事务方法里面还有事务,里面是用外面的事务还是使用新的事务
+
+常用:
+  (默认) PROPAGATION_REQUIRED ,如果有事务就用已有的事务运行,若没有就自己创建一个新事务
+        PROPAGATION_REQUIRES_NEW ,总是开启一个新的事务。如果一个事务已经存在，则将这个存在的事务挂起。
+
+非常用:
+@Transactional(propagation=Propagation.NOT_SUPPORTED) 容器不为这个方法开启事务
+
+@Transactional(propagation=Propagation.MANDATORY) 必须在一个已有的事务中执行,否则抛出异常
+
+@Transactional(propagation=Propagation.NEVER) 必须在一个没有的事务中执行,否则抛出异常(与Propagation.MANDATORY相反)
+
+@Transactional(propagation=Propagation.SUPPORTS) 如果其他bean调用这个方法,
+在其他bean中声明事务,那就用事务.如果其他bean没有声明事务,那就不用事务
+
+@Transactional(propagation=Propagation.PROPAGATION_NESTED)如果一个活动的事务存在，
+运行在一个嵌套的事务中. 如果没有活动事务, 则按TransactionDefinition.PROPAGATION_REQUIRED 属性执行
+
+
+
+
+
+
+
+
+

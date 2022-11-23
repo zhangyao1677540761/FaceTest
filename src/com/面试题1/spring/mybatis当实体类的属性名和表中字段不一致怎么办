@@ -1,0 +1,11 @@
+1 sql语句起别名...
+
+2 mybatis全局配置文件开启驼峰命名规则
+   last_name =  lastName
+
+    <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+   </settings>
+
+
+3 在Mapper映射文件中使用resultMap来自定义映射规则

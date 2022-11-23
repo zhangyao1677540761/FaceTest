@@ -1,0 +1,24 @@
+String:
+场景: 朋友圈点赞数,缓存
+方案: incr命令 ,value用json格式存储
+
+hash:
+场景: 存储用户信息
+方案: hset(key,file,value) 命令
+        hset(userKey,name,admin)
+        hset(userKey,age,20)
+List:
+场景: 实现最新消息的排行(有序的),模拟消息队列
+方案: 利用push命令,将任务存在list集合中.用pop取出
+
+set:
+场景: 将微信好友存在set集合中(可以去重,好友只能有一个),
+方案: 两个人的共同好友(交集) sinter key [key …] 查看一个集合的全部成员，该集合是所有给定集合的交集。
+      可能认识的人(差集) sdiff key [key …] 查看所有给定 key 与第一个 key 的差集
+      社交圈子(并集) sunion key [key …] 查看一个集合的全部成员，该集合是所有给定集合的并集。
+
+zset:
+场景: 成绩表(排行),
+方案:  以一个条件为权重,进行排序
+
+

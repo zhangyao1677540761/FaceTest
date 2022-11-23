@@ -1,0 +1,32 @@
+rdb和aof
+
+rdb: 以快照的形式保存一段时间的数据集,
+     恢复速度比aof快,
+     以替换的方式追加文件,
+     比aof所占空间少
+
+
+
+aof: 以日志的形式存储写的指令,
+     恢复速度比rdb慢,
+     一直追加文件,
+     比rdb所占空间多
+
+
+
+rdb触发:
+    1 save/bgsave(指令)
+    2 shutdown(正常关闭)
+    3 快照的策略,(配置文件的save配置)
+    4 主从复制
+    5 aof的压缩重写
+
+
+
+
+指定可以连接的ip:    bind  
+protected-mode yes : 只有本机可访问(bind注释掉才生效)
+
+开启aof功能:   appendonly  yes
+
+

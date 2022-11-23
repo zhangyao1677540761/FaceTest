@@ -1,0 +1,28 @@
+Centos6:
+    service 服务名 start       启动
+    service 服务名 stop        停止
+    service 服务名 restart     重启
+    service 服务名 reload      重新加载
+    service 服务名 status      查看状态
+
+    chkconfig 自启动...
+    chkconfig --list 列出自启动的服务
+    chkconfig --level 5 服务名 off 关闭自启动
+    chkconfig --level 5 服务名 on  开启自启动
+                有图形化界面5,没有是3
+
+Centos7:
+    systemctl start 服务名   启动
+    systemctl stop 服务名    停止
+    systemctl restart 服务名   重启
+    systemctl reload 服务名   重新加载
+    systemctl status 服务名   查看状态
+
+    systemctl status firewalld 防火墙状态
+    systemctl stop firewalld 防火墙关闭
+
+    systemctl list-unit-files 查看所有服务
+    systemctl list-unit-files | grep 服务名 查看某个服务
+
+    systemctl disable 服务名   关闭自启动
+    systemctl enable  服务名   开启自启动

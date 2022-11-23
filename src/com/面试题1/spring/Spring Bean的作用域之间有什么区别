@@ -1,0 +1,6 @@
+可以通过scope属性指定bean的作用域
+-singleton 默认值，单例的
+-prototype 原形的,非单例的,每次调用都创建一个新对象
+
+-session 一次会话共享一个bean(web环境才有)
+-request 每次请求实例化一个bean(web环境才有)

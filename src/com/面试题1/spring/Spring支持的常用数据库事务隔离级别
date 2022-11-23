@@ -1,0 +1,18 @@
+什么是脏读、幻读、不可重复读？
+脏读 : A事务修改某个数据未提交,B事务读取该修改后字段,A事务回滚,B读取无意义数据
+        (即事务读取到了未提交的事务)
+
+不可重复读 : A事务读取某个数据已提交,B事务修改该数据已提交,A事务再次读取两次数据内容不一致
+        (即事务读取数据时,别的事务进行修改)
+
+幻读 :    A事务读取某个数据已提交,B事插入某条数据已提交,A事务再次读取两次数据数量不一致
+        (一个事务读到另一个事务已提交的insert数据)
+
+隔离级别:
+  @Transactional(isolation = Isolation.READ_UNCOMMITTED)读取未提交数据(会出现脏读, 不可重复读,幻读) 基本不使用
+
+  @Transactional(isolation = Isolation.READ_COMMITTED)读取已提交数据(会出现不可重复读和幻读)
+
+  @Transactional(isolation = Isolation.REPEATABLE_READ)可重复读(会出现幻读)
+
+  @Transactional(isolation = Isolation.SERIALIZABLE)串行化

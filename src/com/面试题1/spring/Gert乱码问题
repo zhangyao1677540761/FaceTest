@@ -1,0 +1,2 @@
+Get乱码:
+1:tomcat的server.xml的65行加上URIEncoding="UTF-8“
